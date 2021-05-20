@@ -2,8 +2,6 @@ package com.barrytu.focus_play
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.barrytu.focus_play.databinding.ActivityMainBinding

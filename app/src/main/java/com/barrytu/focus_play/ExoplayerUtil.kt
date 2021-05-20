@@ -1,6 +1,5 @@
 package com.barrytu.focus_play
 
-import android.media.session.PlaybackState
 import android.net.Uri
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -37,7 +36,9 @@ object ExoplayerUtil {
 
         simpleExoPlayer = SimpleExoPlayer.Builder(AppApplication.getAppContext())
             .setLoadControl(defaultLoadControl)
-            .build()
+            .build().apply {
+                repeatMode = Player.REPEAT_MODE_ALL
+            }
 
         val dataSourceFactory =
             DefaultDataSourceFactory(AppApplication.getAppContext(), Util.getUserAgent(AppApplication.getAppContext(), AppApplication.getAppContext().getString(R.string.app_name)))
@@ -87,6 +88,14 @@ object ExoplayerUtil {
             }
             simpleExoPlayer?.release()
         }
+    }
+
+    fun turnOnVolume() {
+        simpleExoPlayer?.volume = 1f
+    }
+
+    fun turnOffVolume() {
+        simpleExoPlayer?.volume = 0f
     }
 
 
