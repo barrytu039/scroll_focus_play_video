@@ -25,7 +25,7 @@ object ExoplayerUtil {
 
     private var currentKey : String = ""
 
-    fun playVideo(thumbnailView : ImageView?, playerView : PlayerView, url : String) {
+    fun playVideo(progressBar : View, thumbnailView : ImageView?, playerView : PlayerView, url : String) {
         // stop prevent video
         stopPlay()
 
@@ -55,6 +55,10 @@ object ExoplayerUtil {
                 super.onPlaybackStateChanged(state)
                 if (state == Player.STATE_READY) {
                     fadeOutAnim(thumbnailView)
+                    progressBar.visibility = View.GONE
+                }
+                if (state == Player.STATE_BUFFERING) {
+                    progressBar.visibility = View.VISIBLE
                 }
             }
         })

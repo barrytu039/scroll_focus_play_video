@@ -61,6 +61,7 @@ class FocusPlayListAdapter : RecyclerView.Adapter<FocusPlayListAdapter.PlayViewH
         fun bind(url : String) {
             this.url = url
             showThumbnail()
+            binding.itemFocusPlayProgressBar.visibility = View.GONE
         }
 
         fun showThumbnail() {
@@ -69,7 +70,7 @@ class FocusPlayListAdapter : RecyclerView.Adapter<FocusPlayListAdapter.PlayViewH
         }
 
         fun playMedia() {
-            ExoplayerUtil.playVideo(binding.itemFocusPlayThumbnailImageVew,binding.itemFocusPlayPlayerView, url)
+            ExoplayerUtil.playVideo(binding.itemFocusPlayProgressBar,binding.itemFocusPlayThumbnailImageVew,binding.itemFocusPlayPlayerView, url)
         }
 
     }

@@ -23,16 +23,6 @@
         app:surface_type="texture_view"
         app:use_controller="false" />
 
-    <ProgressBar
-        android:id="@+id/itemFocusPlayProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:visibility="gone"/>
-
     <ImageView
         android:id="@+id/itemFocusPlayThumbnailImageVew"
         android:layout_width="0dp"
@@ -43,5 +33,15 @@
         app:layout_constraintStart_toStartOf="@+id/itemFocusPlayPlayerView"
         app:layout_constraintTop_toTopOf="@+id/itemFocusPlayPlayerView"
         tools:src="@drawable/abc_vector_test" />
+
+    <ProgressBar
+        android:id="@+id/itemFocusPlayProgressBar"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/itemFocusPlayThumbnailImageVew"
+        app:layout_constraintTop_toTopOf="@+id/itemFocusPlayThumbnailImageVew" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
